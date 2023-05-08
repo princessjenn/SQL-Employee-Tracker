@@ -1,7 +1,7 @@
-import msql from "mysql2";
+import mysql from "mysql2";
 import inquirer from "inquirer";
 
-const pool = mysql.creatPool(
+const pool = mysql.createPool(
     {
         host: 'localhost',
         user: 'root',
@@ -16,6 +16,6 @@ const pool = mysql.creatPool(
       });
 
       const promisePool = pool.promise();
-        const [rows, fields] = await promisePool.query("SELECT * from department");
+        const [rows, fields] = await promisePool.query('SELECT * FROM department WHERE `name` = ? AND `age` > ?', ['Morty', 14]);
 
         console.log(rows)
