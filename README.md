@@ -40,7 +40,21 @@ THEN I am prompted to select an employee to update and their new role and this i
 
 ## Installation
 
+To begin, we need to make sure we have Node.js and MySQL installed on our machine.
 
+`mkdir SQL-Employee-Tracker`
+
+`cd SQL-Employee-Tracker`
+
+`npm init`
+
+Next, we must install the necessary modules. 
+
+`npm install inquirer`
+
+`npm install mysql2`
+
+This will install the Inquirer and mysql2 modules. The mysql2 module is a MySQL driver for Node.js that we will use to connect to our database!
 
 Now we're ready to start coding!
 
