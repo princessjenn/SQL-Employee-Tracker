@@ -60,12 +60,7 @@ Now we're ready to start coding!
 
 ## Usage
 
-You can quickly and easily create a README file by using this command-line application to generate one. This allows a project creator to devote more time to working on the project!
 
-1. In VS Code, open the integrated terminal associated with your .mjs file
-2. Assuming you have the programs and dependencies described above in the 'Installation' section, simply type ```node index.mjs``` into CLI to start running the generator.
-3. You will be presented with prompts that wait on the user's input, in which the user will type their answer into the command line, and then press enter to present the next prompt.
-4. Once the program ends and the user has entered all of their inputs on the command line based upon the given prompts, the README.md file will be generated in your explorer on VS Code!
 
 
 ## License [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
