@@ -1,4 +1,4 @@
-import mysql from "mysql2";
+import mysql from "mysql2/promise";
 import inquirer from "inquirer";
 
 const pool = mysql.createPool(
@@ -32,9 +32,12 @@ const pool = mysql.createPool(
           name: 'action',
           type: 'list',
           message: 'Welcome to your Employee Database Tracker. What would you like to view?',
-          choices: Object.keys(userActions)
+          choices: [...Object.keys(userActions) , 'Exit'],
         });
 
+        if (answer.action === 'Exit') { // Check if user chose to exit
+          return; // Return from function to exit program
+        }  
         //calling the function based on the user's input:
         await actions[answer.action]();
 
@@ -43,9 +46,13 @@ const pool = mysql.createPool(
 
       //function to view all of the departments in the database:
       async function viewAllDepartments() {
-        const [rows] = await pool.query('SELECT * FROM department');
-      
-        console.table(rows);
+        try {
+          const [rows] = await pool.query('SELECT * FROM department');
+        
+          console.table(rows);
+        } catch (err) {
+          console.error(err);
+        }
       }
 
       //function to view all of the employee roles in the database:
@@ -183,14 +190,12 @@ const pool = mysql.createPool(
       // start the application
       start();
 
+// You must export your module before you require module for circular page being required
+module.exports = { promptUser }
+const { viewAllEmployees, addEmployee, updateEmployeeRole } = require('./lib/employee');
+const { viewAllDepartments, addDepartment } = require('./lib/department-methods');
+const { viewAllRoles, addRole } = require('./lib/roles-methods');
 
 
 
 
-
-
-
-      const promisePool = pool.promise();
-        const [rows, fields] = await promisePool.query('SELECT * FROM department WHERE `name` = ? AND `age` > ?', ['Morty', 14]);
-
-        console.log(rows)

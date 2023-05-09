@@ -1,6 +1,16 @@
 {
   "dependencies": {
-    "inquirer": "^9.2.2",
+    "inquirer": "^8.2.4",
     "mysql2": "^3.3.0"
-  }
+  },
+  "name": "sql-employee-tracker",
+  "description": "## Description",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Jennifer_Eckenrode <j.eckenrode@me.com>",
+  "license": "ISC"
 }
