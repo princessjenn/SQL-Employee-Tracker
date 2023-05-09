@@ -1,12 +1,13 @@
 {
   "dependencies": {
     "inquirer": "^8.2.4",
+    "mysql": "^2.18.1",
     "mysql2": "^3.3.0"
   },
   "name": "sql-employee-tracker",
   "description": "## Description",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "index.mjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
